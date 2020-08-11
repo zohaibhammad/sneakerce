@@ -1,0 +1,105 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Sneakerce
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  style.
+    .formm{
+    height: 50px;
+    color: #2B3252;
+    margin-left: 30px;
+    margin-top: 60px;
+    }
+    .f{
+    font-size : 225px;
+    text-align: right;
+    line-height: 150px;
+    }
+    .formm input{
+    width : 100%;
+    height : 100%;
+    color: #2B3252;
+    padding-top:20px;
+    background-color: #EF5455;
+    border: none;
+    border-bottom: black solid;}
+    .button{
+    width: 100px;
+    font-weight: bold;
+    font-size: 20px;
+    height: 40px;
+    text-align: center;
+    border-radius: 100px;
+    border : 2px solid #FAD744;
+    color: #FAD744;
+    transition: 1.5s;
+    text-align: center;
+    background-color: #EF5455;
+    padding-bottom: 40px;
+    }
+    .Top{
+    margin-top: -10px;
+    padding-bottom: 50px;
+    }
+    .yellow{
+    color: #FAD744;
+    }
+    .blue{
+    color: #2B3252;
+    }
+    .bgbody{
+    background-color : #EF5455;;
+    }
+    .navbar{
+    background-color: #EF5455;
+    margin-left: 550px;
+    }
+    .pic6{
+    float: left;
+    margin-left: 305px;
+    margin-top:-110px;
+    }
+    .fr{
+    float: right;
+    margin-left: -380px;
+    margin-right: -35px;
+    margin-top: -60px;
+    }
+    h2{
+    font-size: 60px;
+    margin-top:-40px;
+    }
+body.mt-2.bgbody
+    .container-fluid
+    .top
+        include ../partials/navbar
+    .media.formm
+        form#form1.formm(action="/products/edit/"+product._id, method="post")
+            h2.yellow  UPDATE PRODUCT 
+            .form-group
+                strong Product Image URL:
+                input#image(type='text' name='image' placeholder = "Image URL" required='' value=product.image)
+            .form-group
+                strong Product Name:
+                input#name(type='text' name='name' placeholder='Enter name' required='' value=product.name)
+            .form-group
+                strong Price: 
+                input#price(type='number' name='price' placeholder='Enter price' required='' value=product.price)
+            .form-group
+                strong Quantity: 
+                input#quantity(type='number' name='quantity' placeholder='Enter quantity' required='' value=product.quantity)
+            button.button.pt-2(type='submit')  Done 
+        .media-body
+            img.pic6(src='/images/7.png' alt='img' height='760px')
+            .fr
+                h1.mt-0.f.blue
+                    strong SK
+                h1.mt-0.f.yellow
+                    strong NE
+                h1.mt-0.f.blue
+                    strong ER
+                h1.mt-0.f.yellow
+                    strong AC

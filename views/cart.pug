@@ -1,0 +1,147 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Sneakerce
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  style.
+    .formm{
+    width : 50%;
+    height: 50px;
+    color: #2B3252;
+    }
+    .f{
+    font-size : 230px;
+    text-align: right;
+    line-height: 153px;
+    }
+    .fr{
+    float: right;
+    margin-right: -50px;
+    margin-left: -300px;
+    margin-top: -360px;
+    position: fixed;
+    }
+    .formm input{
+    width : 100%;
+    height : 100%;
+    color: #2B3252;
+    padding-top:20px;
+    background-color: #EF5455;
+    border: none;
+    border-bottom: black solid;}
+    .button{
+    width: 200px;
+    font-weight: bold;
+    font-size: 20px;
+    height: 30px;
+    text-align: center;
+    border-radius: 100px;
+    border : 2px solid #FAD744;
+    color: #FAD744;
+    transition: 1.5s;
+    text-align: center;
+    background-color: #EF5455;
+    padding-bottom: 40px;
+    margin-top: 50px;
+    position: fixed;
+
+    }
+    th,td{
+    border: 10px #2B3252 solid;
+    border-collapse: collapse;
+  
+    }
+    table{
+      margin-top: -150px;
+      text-align: center;
+    }
+    .Top{
+    margin-top: -10px;
+    padding-bottom: 50px;
+    }
+    .yellow{
+    color: #FAD744;
+    }
+    .blue{
+    color: #2B3252;
+    }
+    .bgbody{
+    background-color : #EF5455;;
+    }
+    .navbar{
+    background-color: #EF5455;
+    margin-left: 550px;
+    }
+    .pic6{
+    float: left;
+    margin-left: 930px;
+    margin-top:-400px;
+    position: fixed;
+    }
+    h2{
+    font-size: 40px;
+    margin-top:-130px;
+    margin-left: 180px;
+    }
+    .st{
+      line-height : 40px; 
+      padding-left : 50px; 
+      padding-top: 200px;
+    }
+
+    .bt{
+      border: none;
+      background-color:#EF5455; 
+      font-size: 30px;
+    }
+
+    .nb{
+      border: none;
+    }
+
+body.mt-2.bgbody
+  .container-fluid.ml-2.text-secondary
+    .Top
+      include ./partials/navbar
+    .media.formm
+      .st
+        table
+          thead
+            - var total = 0;
+            tr
+              th.pl-5.pr-5.pt-2.pb-2 Name
+              th.pl-5.pr-5.pt-2.pb-2 Quantity
+              th.pl-5.pr-5.pt-2.pb-2 Price
+              th.pl-5.p5-5.pt-2.pb-2.nb
+          tbody
+            each item in cart
+              - total += Number(item.price)
+              tr
+                td.pl-5.pr-5.pt-2.pb-2=item.name
+                td.pl-5.pr-5.pt-2.pb-2= 1
+                td.pl-5.pr-5.pt-2.pb-2=item.price
+                td.pl-5.pr-5.pt-2.pb-2.nb 
+                  a(href='/products/cart/remove/'+item._id class = "blue bt") &times;
+          tfoot
+            tr
+              td.nb
+              td Total:
+              td=total
+          
+        a(href = "/successfulbuy" class = "button") Checkout
+
+        .media-body
+          img.pic6(src='/images/7.png' alt='img' height='760px')
+          .fr
+            h1.mt-0.f.blue
+              strong C
+            h1.mt-0.f.yellow
+              strong A
+            h1.mt-0.f.blue
+              strong R
+            h1.mt-0.f.yellow
+              strong T
+

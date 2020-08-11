@@ -1,0 +1,123 @@
+doctype html
+head
+    meta(charset='utf-8')
+    title Sneakerce
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+    //-script(src='./jquery-3.4.1.min.js')
+    script(src='/javascripts/register.js')
+    style.
+        .formm{
+        height: 50px;
+        color: #2B3252;
+        margin-left: 30px;
+        }
+        .f{
+        font-size : 225px;
+        text-align: right;
+        line-height: 150px;
+        }
+        .fr{
+        float: right;
+        margin-left: -380px;
+        margin-right: -25px;
+        }
+        .formm input{
+        width : 100%;
+        height : 100%;
+        color: #2B3252;
+        padding-top:20px;
+        background-color: #EF5455;
+        border: none;
+        border-bottom: black solid;}
+        .button{
+        width: 100px;
+        font-weight: bold;
+        font-size: 20px;
+        height: 40px;
+        text-align: center;
+        border-radius: 100px;
+        border : 2px solid #FAD744;
+        color: #FAD744;
+        transition: 1.5s;
+        text-align: center;
+        background-color: #EF5455;
+        padding-bottom: 40px;
+        }
+        .Top{
+        margin-top: -10px;
+        padding-bottom: 50px;
+        }
+        .yellow{
+        color: #FAD744;
+        }
+        .blue{
+        color: #2B3252;
+        }
+        .bgbody{
+        background-color : #EF5455;;
+        }
+        .navbar{
+        background-color: #EF5455;
+        margin-left: 550px;
+        }
+        .pic6{
+        float: left;
+        margin-left: 460px;
+        margin-top:-60px;
+        }
+        h2{
+        font-size: 60px;
+        margin-top:-40px;
+        }
+
+body.mt-2.bgbody
+    .container-fluid
+    .top
+        include ../partials/navbar
+    .media.formm
+        form#form1.formm(action='/register' method="post" onsubmit='formValidation(event)')
+            h2.yellow  SIGN UP
+            .form-group
+                strong Email Address:
+                input#emailadd(type='email' name="email" placeholder='Enter email' required='')
+            .form-group
+                strong Password:
+                input#pass(type='password' name="password" placeholder='Enter password' required='')
+                strong
+                span#errorpass(style='color: black; font-size: 10px;')
+            .form-group
+                strong Name:
+                input#name(type='text' name="name" placeholder='Enter Name' required='')
+                strong
+                span#errorname(style='color: black; font-size: 10px;')
+            .form-group
+                strong Phone Number: 
+                input#pnum(type='number' name="phone" placeholder='Add Phone number' required='')
+                strong
+                span#errornum(style='color: black; font-size: 10px;')
+            .form-group
+                strong Address: 
+                input#add(type='text' name="address" placeholder='Enter address' required='')
+            .form-group
+                strong Credit Card Number: 
+                input#credit(type='number' name="credit" placeholder='Add credit card number' required='')
+                strong
+                span#errorcredit(style='color: black; font-size: 10px;')
+            button.button.pt-2(type='submit' placeholder='Submit' value='Submit' onclick='formValidation(event)')  Submit 
+            br
+            a(href='/login')
+                h5.mt-3.blue  ALREADY HAVE AN ACCOUNT? 
+        .media-body
+            img.pic6(src='/images/7.png' alt='img' height='760px')
+            .fr
+                h1.mt-0.f.blue
+                    strong SK
+                h1.mt-0.f.yellow
+                    strong NE
+                h1.mt-0.f.blue
+                    strong ER
+                h1.mt-0.f.yellow
+                    strong AC

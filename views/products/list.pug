@@ -1,0 +1,110 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Sneakerce
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  style.
+    .formm{
+    width : 50%;
+    height: 50px;
+    color: #2B3252;
+    }
+    .f{
+    font-size : 181px;
+    text-align: right;
+    line-height: 120px;
+    }
+    .button{
+    width: 150px;
+    font-weight: bold;
+    font-size: 14px;
+    height: 40px;
+    border: none;
+    color: #FAD744;
+    transition: 1.5s;
+    text-align: center;
+    background-color: #EF5455;
+    }
+    .Top{
+    margin-top: -10px;
+    padding-bottom: 50px;
+    }
+    .yellow{
+    color: #FAD744;
+    }
+    .blue{
+    color: #2B3252;
+    }
+    .bgbody{
+    background-color : #EF5455;;
+    }
+    .navbar{
+    background-color: #EF5455;
+    margin-left: 550px;
+    }
+    .pic6{
+    float: left;
+    margin-left: 344px;
+    margin-top:-60px;
+    }
+    .fr{
+    float: right;
+    margin-left:-450px;
+    margin-right:-22px;
+    }
+    h2{
+    font-size: 80px;
+    margin-top:-40px;
+    }
+    table,th,td{
+    border: 2px solid #EF5255;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 50px;
+    text-align: center;
+    }
+    th{
+    font-size: 20px;
+    }
+    td{
+    border-bottom: 2px solid #2B3252;
+    }
+body.mt-2.bgbody
+    .container-fluid.ml-2
+    .top
+        include ../partials/navbar
+    .media.formm
+        .mid
+        table
+            thead
+                tr
+                    th Image
+                    th Name
+                    th Price
+                    th Quantity
+            tbody
+                each product in products
+                    tr
+                        td 
+                            img(src = product.image, alt = "img" height = "100px")
+                        td=product.name
+                        td=product.price
+                        td=product.quantity
+                        td(style='padding-right: 0px;')
+                            a(href="/products/cart/"+product._id class = "button") ADD TO CART
+        .media-body
+            img.pic6(src='/images/7.png' alt='img' height='760px')
+            .fr
+                h1.mt-0.f.blue
+                    strong S
+                h1.mt-0.f.yellow
+                    strong H
+                h1.mt-0.f.blue
+                    strong O
+                h1.mt-0.f.yellow
+                    strong E
+                h1.mt-0.f.blue
+                    strong S

@@ -1,0 +1,150 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Sneakerce
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  style.
+    .formm{
+    width : 50%;
+    height: 50px;
+    color: #2B3252;
+    }
+    .f{
+    font-size : 183px;
+    text-align: right;
+    line-height: 120px;
+    }
+    .fr{
+    float: right;
+    margin-left:-400px;
+    margin-right:-55px;
+    }
+    .button{
+    width: 70px;
+    font-weight: bold;
+    font-size: 14px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    color: #FAD744;
+    transition: 1.5s;
+    text-align: center;
+    background-color: #EF5455;
+    }
+    .Top{
+    margin-top: -10px;
+    padding-bottom: 50px;
+    }
+    .yellow{
+    color: #FAD744;
+    }
+    .blue{
+    color: #2B3252;
+    }
+    .bgbody{
+    background-color : #EF5455;;
+    }
+    .navbar{
+    background-color: #EF5455;
+    margin-left: 550px;
+    }
+    .pic6{
+    float: left;
+    margin-left: 92px;
+    margin-top:-60px;
+    }
+    h2{
+    font-size: 80px;
+    margin-top:-40px;
+    }
+    .button1{
+    width: 200px;
+    height: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 100px;
+    border : 2px solid #2B3252;
+    color: #2B3252;
+    transition: 1.5s;
+    text-align: center;
+    background-color: #EF5255;
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 300px;
+    }
+    table,th,td{
+    border: 2px solid #EF5255;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 500px;
+    }
+    td{
+    border-bottom: 2px solid #2B3252;
+    }
+    .mid{
+    margin-left: -435px;
+    margin-top: 80px;
+    }
+    .butt{
+
+    }
+    .b1{
+      float: left;
+    }
+    .b2{
+      border: none; 
+      margin-top: -45px; 
+      float: right; 
+      margin-left: 80px; 
+      background-color:#EF5455; 
+      font-size: 30px;
+    }
+body.mt-2.bgbody
+    .container-fluid.ml-2
+      .top
+        include ../partials/navbar
+      .media.formm
+        .butt
+          a(href = "/products/add" class = "button1") ADD NEW SHOE
+
+        .mid
+          table
+            thead
+                tr
+                    th Product Image
+                    th Product Name
+                    th Price
+                    th Quantity
+                    th
+            tbody
+                each product in products
+                    tr
+                        td 
+                          img(src = product.image , alt = 'img' height = '100px') 
+                        td=product.name
+                        td=product.price
+                        td=product.quantity
+                        td
+                            a(href = "/products/edit/"+product._id class = 'button b1') Update
+                            a(href =  "/products/delete/"+product._id class = "button blue b2") &times;
+        .media-body
+          img.pic6(src='/images/7.png' alt='img' height='760px')
+          .fr
+            h1.mt-0.f.blue
+              strong A
+            h1.mt-0.f.yellow
+              strong D
+            h1.mt-0.f.blue
+              strong M
+            h1.mt-0.f.yellow(style='margin-right:59px;')
+              strong I
+            h1.mt-0.f.blue
+              strong N

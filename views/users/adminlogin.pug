@@ -1,0 +1,98 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Sneakerce
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  style.
+    .formm{
+    widht : 50%;
+    height: 50px;
+    color: #2B3252;
+    }
+    .f{
+    font-size : 225px;
+    text-align: right;
+    line-height: 150px;
+    }
+    .fr{
+    float: right;
+    margin-left: -400px;
+    margin-right: -40px;
+    }
+    .formm input{
+    width : 100%;
+    height : 100%;
+    color: #2B3252;
+    padding-top:20px;
+    background-color: #EF5455;
+    border: none;
+    border-bottom: black solid;}
+    .button{
+    width: 100px;
+    font-weight: bold;
+    font-size: 20px;
+    height: 40px;
+    text-align: center;
+    border-radius: 100px;
+    border : 2px solid #FAD744;
+    color: #FAD744;
+    transition: 1.5s;
+    text-align: center;
+    background-color: #EF5455;
+    padding-bottom: 40px;
+    }
+    .Top{
+    margin-top: -10px;
+    padding-bottom: 50px;
+    }
+    .yellow{
+    color: #FAD744;
+    }
+    .blue{
+    color: #2B3252;
+    }
+    .bgbody{
+    background-color : #EF5455;;
+    }
+    .navbar{
+    background-color: #EF5455;
+    margin-left: 550px;
+    }
+    .pic6{
+    float: left;
+    margin-left: 390px;
+    margin-top:-60px;
+    }
+    h2{
+    font-size: 60px;
+    margin-top:-40px;
+    }
+body.mt-2.bgbody
+    .container-fluid
+        .top
+            include ../partials/navbar.pug
+        .media.formm
+            form(action='/adminlogin' method='post' style='line-height : 40px; padding-left : 50px; padding-top: 150px;')
+                h2.yellow  ADMIN SIGN IN 
+                .form-group
+                    strong Email Address:
+                    input#email(type='email' name = "email" placeholder='Enter Email')
+                .form-group
+                    strong Password:
+                    input#password(type='password' name = "password" placeholder='Enter Password')
+                .form-group
+                    button.button(type='submit') Sign in
+            .media-body
+                img.pic6(src='/images/7.png' alt='img' height='760px')
+                .fr
+                    h1.mt-0.f.blue
+                        strong SK
+                    h1.mt-0.f.yellow
+                        strong NE
+                    h1.mt-0.f.blue
+                        strong ER
+                    h1.mt-0.f.yellow
+                        strong AC
